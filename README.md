@@ -4,10 +4,12 @@ Maven project using java 11
 Build with 'mvn clean install'
 Run tests with 'mvn clean test'
 
-Application has designed with 3 different modules in mind, in order to comply with the single responsability principle, open-closed principle, dependency inversion etc..
+Application was designed with 3 different modules in mind, in order to comply with the single responsability principle, open-closed principle, dependency inversion (for insstance, the parser depends on the abstractions of Channel and statistics extractors and not any concrete implementation) etc..
 
 Channel: Monitorable channel, can be a folder or an s3 bucket for instance. In order to extend it to monitor/poll anything else than a folder you just need to create a new implementation of MonitorableChannel
+
 Parser: Specific parsing rules, coordinates polling the items from monitorable channel and applying statistics extractor onto every item
+
 Statistics: Implements statistics extraction and handle different types/extensions.
 
 Instructions
